@@ -1,0 +1,32 @@
+<shared-header color="primary" [title]="''" [isModal]="false" [backButtons]="'/auth'" [centerTitle]="false">
+</shared-header>
+<ion-content class="ion-margin">
+  <!-- <shared-logo></shared-logo> -->
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="animate__animated animate__fadeIn">
+    <ion-card>
+      <ion-card-header class="ion-text-center">
+        <ion-card-title>Registrarse</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+
+        <div class="marginInput">
+          <ion-input type="email" label="Correo electrónico" label-placement="floating" fill="outline"
+            placeholder="name@company.com" formControlName="email" [errorText]="errorInput('email')"></ion-input>
+        </div>
+
+        <div class="marginInput">
+
+          <ion-input type="password" label="Contraseña" label-placement="floating" fill="outline" placeholder="********"
+            formControlName="password" [errorText]="errorInput('password')"></ion-input>
+        </div>
+        <div>
+          <ion-button type="submit" expand="full" shape="round" [disabled]="!form.valid">Registrarme</ion-button>
+        </div>
+        <div>
+          <ion-button type="button" expand="full" shape="round" fill="clear"
+            [routerLink]="['/auth/forgot-password']">¿Olvidaste tu contraseña?</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

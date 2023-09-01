@@ -1,0 +1,54 @@
+<ion-header *ngIf="!(title==='Portafolio')" class="ion-no-border">
+  <ion-toolbar [color]="color">
+
+    <ion-buttons slot="start">
+      <ion-button aria-label="isModal" *ngIf="isModal">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-back-button *ngIf="backButtons" [defaultHref]="backButtons"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="title" [class]="centerTitle?'ion-text-center':''">{{title}}</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button *ngIf="$darkMode | async" (click)="setTheme(false)" aria-label="darkMode">
+        <ion-icon name="sunny-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button *ngIf="!($darkMode | async)" (click)="setTheme(true)" aria-label="darkMode">
+        <ion-icon name="moon-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-header *ngIf="title==='Portafolio'" [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Portafolio</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header *ngIf="title==='Portafolio'" [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button aria-label="isModal" *ngIf="isModal">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-back-button *ngIf="backButtons" [defaultHref]="backButtons"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="title" [class]="centerTitle?'ion-text-center':''">{{title}}</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button *ngIf="$darkMode | async" (click)="setTheme(false)" aria-label="darkMode">
+        <ion-icon name="sunny-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button *ngIf="!($darkMode | async)" (click)="setTheme(true)" aria-label="darkMode">
+        <ion-icon name="moon-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
