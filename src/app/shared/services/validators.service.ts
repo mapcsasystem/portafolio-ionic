@@ -8,6 +8,8 @@ export class ValidatorsService {
   public emailPattern: RegExp =
     /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,4}))$/;
   public notSpaceStartEndStringPattern: RegExp = /^[^\s].+[^\s]$/;
+  public passwordPattern: RegExp =
+    /(?:(?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
 
   public isValidField(form: FormGroup, field: string): boolean | null {
     return (
